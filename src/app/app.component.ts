@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output,EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,20 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'proviamo';
-  lanciato=0;
-  valore="";
+  ComponentCorrente:number =1;
 
+  
 
-  lista = ['home', 'lista'];
+  
 
-  elimina(indice:number) {
-    this.title="";
-    this.lanciato=1;
-  }
-  visto(){
-    if(this.lanciato==1)return true;
-    else return false;
-  }
 }
 

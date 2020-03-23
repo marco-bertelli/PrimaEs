@@ -1,9 +1,13 @@
+<app-menu (selectComponent)="ComponentCorrente=$event"></app-menu>
 
-  <button (click)="elimina(i)" *ngFor="let scelta of lista; let i=index">{{scelta}}</button>
 
-    <p>{{valore}}</p>
-    
-    <app-menu *ngIf="visto()"></app-menu>
+<div [ngSwitch]="ComponentCorrente">
+<app-home *ngSwitchCase="1"></app-home>
+
+<app-game-list *ngSwitchCase="2"></app-game-list>
+
+<app-game-detail *ngSwitchCase="3"></app-game-detail>
+</div>
 
 
 
