@@ -20,7 +20,7 @@ export class MenuComponent implements OnInit {
   menulist:MenuItem[] =[
     {id:1,description:"home",selected:true },
     {id:2,description:"lista",selected:false },
-    {id:3,description:"game detail",selected:false }
+    
 
   ]
   selectComponet(id:number){
