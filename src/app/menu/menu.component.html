@@ -1,6 +1,5 @@
 <ul>
-    <li *ngFor="let menuItem of menulist">
-      
+    <p *ngFor="let menuItem of menulist">
         <button (click)="selectComponet(menuItem.id)">  {{menuItem.description}} </button>
-    </li>
+    </p>
 </ul>

@@ -24,7 +24,6 @@ export class MenuComponent implements OnInit {
 
   ]
   selectComponet(id:number){
-    console.log(id);
     this.selectMenuItem.emit(id);
   }
 

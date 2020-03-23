@@ -12,5 +12,10 @@ export class GameListService {
   getlista():ListItem[]{
     return this.gameList;
   }
+  getSingolo(id:number){
+    return this.gameList.find(item=>{
+      return item.Id === id;
+    })
+  }
   constructor() { }
 }

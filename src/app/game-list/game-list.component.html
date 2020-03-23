@@ -1,5 +1,10 @@
-<ol>
-    <li *ngFor="let listItem of gameList">
-            {{listItem.Nome}}
-    </li>
-</ol>
+
+<div class="list-type5">
+    <ol>
+        <li *ngFor="let listItem of gameList">
+                {{listItem.Nome}}
+            <button (click)="apriS(listItem.Id)">Dettaglio</button>
+        </li>
+    </ol>
+
+</div>
