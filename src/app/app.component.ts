@@ -6,7 +6,7 @@ import { Component, Output,EventEmitter } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  ComponentCorrente:number =1;
+  componentCorrente:number =1;
 
   
 

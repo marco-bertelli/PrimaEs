@@ -13,16 +13,18 @@ export class MenuComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
   @Output()
-  selectMenuItem:EventEmitter<number>=new EventEmitter;
+  selectMenuItem:EventEmitter<number>=new EventEmitter<number>();
 
   menulist:MenuItem[] =[
     {id:1,description:"home",selected:true },
     {id:2,description:"lista",selected:false },
-    {id:1,description:"game detail",selected:false }
+    {id:3,description:"game detail",selected:false }
 
   ]
   selectComponet(id:number){
+    console.log(id);
     this.selectMenuItem.emit(id);
   }
 

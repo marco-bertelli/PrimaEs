@@ -1,7 +1,7 @@
-<app-menu (selectComponent)="ComponentCorrente=$event"></app-menu>
+<app-menu (selectMenuItem)="componentCorrente = $event"></app-menu>
 
 
-<div [ngSwitch]="ComponentCorrente">
+<div [ngSwitch]="componentCorrente">
 <app-home *ngSwitchCase="1"></app-home>
 
 <app-game-list *ngSwitchCase="2"></app-game-list>
