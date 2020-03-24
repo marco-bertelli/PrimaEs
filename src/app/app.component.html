@@ -1,14 +1,4 @@
-<app-menu (selectMenuItem)="componentCorrente = $event"></app-menu>
-
-
-<div [ngSwitch]="componentCorrente">
-<app-home *ngSwitchCase="1"></app-home>
-
-<app-game-list (selectListItem)="dettaglio($event)" *ngSwitchCase="2"></app-game-list>
-
-<app-game-detail [gameID]="selezionato" *ngSwitchCase="3"></app-game-detail>
-
-</div>
-
+<app-menu></app-menu>
+<router-outlet></router-outlet> 
 
 
