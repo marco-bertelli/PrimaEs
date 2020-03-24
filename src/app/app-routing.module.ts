@@ -1,17 +1,21 @@
-import { NgModule } from '@angular/core';
+import * as core from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './home/home.component';
+import { GameListComponent } from './game-list/game-list.component';
+import { GameDetailComponent } from './game-detail/game-detail.component';
+
+
 
 
 const appRoutes: Routes = [
-    { path: 'home', component: PrimoComponent, data: { title: "Primo" } },
-    { path: 'primo-diverso', component: PrimoComponent, data: { title: "Primo Diverso" } },
-    { path: 'secondo', component: SecondoComponent },
-    { path: 'ciclo-vita', component: CiclovitaComponent },
-    { path: '', redirectTo: '/primo', pathMatch: 'full' },
-    { path: '**', component: PageNotFoundComponent }
+    { path: 'home', component: HomeComponent },
+    { path: 'game-list', component: GameListComponent},
+    { path: 'game-detail', component: GameDetailComponent},
+    { path: '', redirectTo: '/home', pathMatch: 'full' },
+   // { path: '**', component: PageNotFoundComponent }
 ];
 
-@NgModule({
+@core.NgModule({
     imports: [
         RouterModule.forRoot(appRoutes)
     ],
@@ -19,4 +23,4 @@ const appRoutes: Routes = [
         RouterModule
     ]
 })
-export class DemoBergamoRoutingModule { }
+export class RoutingGame { }
