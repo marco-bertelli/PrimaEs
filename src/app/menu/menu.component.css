@@ -1,9 +1,30 @@
-ul {
-    border: 1px solid #e7e7e7;
-    background-color: #f3f3f3;
-  }
-  
-  li a {
-    color: #666;
-  }
-  
+.nav {
+  background: white;
+  width: 18%;
+  height: 7vh;
+  display: flex;
+  justify-content: center;
+  margin-left: 650px;
+  margin-bottom: 100px;
+}
+
+ul{
+  width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+}
+
+
+
+ li {
+  font-family: "Arial";
+  font-weight: 100;
+  font-size: 18px;
+  list-style: none;
+  text-decoration: none;
+  text-decoration-style: none;
+  padding-right: 25px;
+}

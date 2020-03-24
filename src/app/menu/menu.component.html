@@ -1,5 +1,7 @@
-<ul>
-    <p *ngFor="let menuItem of menulist">
-        <button (click)="selectComponet(menuItem.id)">  {{menuItem.description}} </button>
-    </p>
-</ul>
+<div class="nav">
+    <ul>
+        <li routerLink="/home" routerLinkActive="active">Home</li>
+        <li routerLink="/game-list" routerLinkActive="active">Lista</li>
+        <li routerLink="/game-detail" routerLinkActive="active">Dettaglio</li>
+    </ul> 
+</div>
