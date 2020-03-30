@@ -5,14 +5,15 @@ import { LoginComponent } from './login/login.component';
 import { GameListComponent } from './game-list/game-list.component';
 import { GameDetailComponent } from './game-detail/game-detail.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { MyRouteGuardService } from './services/guard/my-route-guard.service';
 
 
 
 const appRoutes: Routes = [ //cambia questa
     { path: 'login', component: LoginComponent },
-    { path: 'home', component: HomeComponent },
-    { path: 'game-list', component: GameListComponent},
-    { path: 'game-detail/:id', component: GameDetailComponent},
+    { path: 'home', component: HomeComponent, canActivate: [MyRouteGuardService] },
+    { path: 'game-list', component: GameListComponent, canActivate: [MyRouteGuardService]},
+    { path: 'game-detail/:id', component: GameDetailComponent, canActivate: [MyRouteGuardService]},
     { path: '', redirectTo: '/login', pathMatch: 'full' },
     { path: '**', component: PageNotFoundComponent }
 ];
