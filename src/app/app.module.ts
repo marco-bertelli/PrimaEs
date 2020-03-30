@@ -10,6 +10,7 @@ import { RoutingGame } from './app-routing.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
+import { ModificaComponent } from './modifica/modifica.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { LogoutComponent } from './logout/logout.component';
     GameDetailComponent,
     PageNotFoundComponent,
     LoginComponent,
-    LogoutComponent
+    LogoutComponent,
+    ModificaComponent
   ],
   imports: [
     BrowserModule,
