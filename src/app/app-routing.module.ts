@@ -10,7 +10,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 const appRoutes: Routes = [ //cambia questa
     { path: 'home', component: HomeComponent },
     { path: 'game-list', component: GameListComponent},
-    { path: 'game-detail', component: GameDetailComponent},
+    { path: 'game-detail', component: GameDetailComponent, data: { id:"" }},
     { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: '**', component: PageNotFoundComponent }
 ];

@@ -1,6 +1,7 @@
 import { Component, OnInit,EventEmitter, Output } from '@angular/core';
 import { ListItem } from '../models/list-game.interface';
 import { GameListService } from '../services/game-list.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-game-list',
@@ -9,17 +10,15 @@ import { GameListService } from '../services/game-list.service';
 })
 export class GameListComponent implements OnInit {
 
-  @Output()
-  selectListItem:EventEmitter<number>=new EventEmitter<number>();
+  
 
   gameList:ListItem[];
 
-  constructor(private listaService: GameListService ) { 
+  constructor(private listaService: GameListService,private router: Router) { 
     this.gameList=this.listaService.getlista();
   }
   apriS(id:number){
-    this.selectListItem.emit(id);
-    console.log(id);
+    this.router.navigateByUrl('/game-detail?id= ');
   }
 
   ngOnInit(): void {
