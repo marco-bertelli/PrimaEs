@@ -1,13 +1,30 @@
 import { Injectable } from '@angular/core';
-import { ListItem } from '../models/list-game.interface';
+import { User } from '../models/user.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginServiceService {
 
-  private gameList:ListItem[]=[
-    {Id:1,Nome:"COD",Genere:"sparatutto",Descrizione:"si",Rating:9,Prezzo:0,Annouscita:new Date()},
-    {Id:2,Nome:"DOOM",Genere:"fps-arena",Descrizione:"nuovo gioco violento",Rating:9,Prezzo:70,Annouscita:new Date()}
+  private controllo:boolean;
+
+  private gameList:User[]=[
+    {username:"marco",password:"prosciutto"},
+    {username:"carlo",password:"negro"},
   ]
+  
+
+  accesso(username:string,password:string):boolean{
+
+    this.controllo=false;
+    
+    this.gameList.forEach(element => {
+      if(element.username===username && element.password===password){
+        this.controllo=true;
+      }
+    });
+    
+    return this.controllo;  
+  }
+ 
 }
