@@ -18,7 +18,7 @@ export class GameListComponent implements OnInit {
     this.gameList=this.listaService.getlista();
   }
   apriS(id:number){
-    this.router.navigateByUrl('/game-detail?id= ');
+    this.router.navigate(['/game-detail',id]);
   }
 
   ngOnInit(): void {
