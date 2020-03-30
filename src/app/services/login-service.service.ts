@@ -1,30 +1,46 @@
 import { Injectable } from '@angular/core';
 import { User } from '../models/user.interface';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginServiceService {
 
-  private controllo:boolean;
+  
 
   private gameList:User[]=[
     {username:"marco",password:"prosciutto"},
     {username:"carlo",password:"negro"},
   ]
   
+  constructor(private router: Router){
+
+  }
 
   accesso(username:string,password:string):boolean{
 
-    this.controllo=false;
+    let controllo=false;
     
     this.gameList.forEach(element => {
       if(element.username===username && element.password===password){
-        this.controllo=true;
+        controllo=true;
       }
     });
     
-    return this.controllo;  
+    return controllo;  
   }
+
+  eseguiLogin(username:string,password:string){
+
+    if(this.accesso(username,password)){
+      //se giusto memorizza con pass
+      sessionStorage.setItem('user', username);
+
+      this.router.navigateByUrl("/home");
+    }
+    else console.log("non funzionante")
+  }
+
  
 }

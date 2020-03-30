@@ -17,11 +17,8 @@ export class LoginComponent implements OnInit {
 
   login(username:string, password:string){
     
-
-    if(this.listaUtenti.accesso(username,password)){
-      this.router.navigateByUrl("/home");
-    }
-    else console.log("non funzionante")
+    this.listaUtenti.eseguiLogin(username,password);
+    
   }
 
   loginS(username:string, password:string){
