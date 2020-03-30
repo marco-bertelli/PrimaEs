@@ -14,8 +14,7 @@ export class MenuComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  @Output()
-  selectMenuItem:EventEmitter<number>=new EventEmitter<number>();
+  utente=sessionStorage.getItem('user');
 
   menulist:MenuItem[] =[
     {id:1,description:"home",selected:true },
@@ -24,7 +23,7 @@ export class MenuComponent implements OnInit {
 
   ]
   selectComponet(id:number){
-    this.selectMenuItem.emit(id);
+    
   }
 
 }

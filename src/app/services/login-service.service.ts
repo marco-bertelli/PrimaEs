@@ -26,6 +26,7 @@ export class LoginServiceService {
       if(element.username===username && element.password===password){
         //gestione admin
         element.admin === true ? sessionStorage.setItem('privilege','admin') : sessionStorage.setItem('privilege','user')
+        
         controllo=true;
       }
     });
