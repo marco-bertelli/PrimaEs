@@ -41,6 +41,14 @@ export class LoginServiceService {
     }
     else console.log("non funzionante")
   }
+  eseguiLoginS(){
+   let username=sessionStorage.getItem('user');
+   let password=sessionStorage.getItem('password');
+
+    if(this.accesso(username,password)){
+      this.router.navigateByUrl("/home");
+    }
+  }
 
  
 }
