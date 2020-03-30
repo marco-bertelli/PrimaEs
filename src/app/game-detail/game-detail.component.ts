@@ -9,11 +9,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./game-detail.component.css']
 })
 export class GameDetailComponent implements OnInit {
-  
-  
 
-  
-  
 
   game:ListItem;
 
