@@ -16,14 +16,13 @@ export class MenuComponent implements OnInit {
 
   utente=sessionStorage.getItem('user');
 
-  menulist:MenuItem[] =[
-    {id:1,description:"home",selected:true },
-    {id:2,description:"lista",selected:false },
-    
+  admin(){
 
-  ]
-  selectComponet(id:number){
+    if(sessionStorage.getItem('privilege')==='admin')return true;
     
+    else return false;
+
   }
+  
 
 }

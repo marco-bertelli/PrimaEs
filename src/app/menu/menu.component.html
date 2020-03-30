@@ -3,7 +3,7 @@
         <li><p>benvenuto {{utente}}</p></li>
         <li routerLink="/home" routerLinkActive="active">Home</li>
         <li routerLink="/game-list" routerLinkActive="active">Lista</li>
-        <li routerLink="/game-detail" routerLinkActive="active">Dettaglio</li>
+        <li *ngIf="admin()" routerLink="/game-detail" routerLinkActive="active">Modifica</li>
         <li><app-logout></app-logout></li>
     </ul> 
 </div>
