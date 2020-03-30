@@ -10,8 +10,8 @@ export class LoginServiceService {
   
 
   private gameList:User[]=[
-    {username:"marco",password:"prosciutto"},
-    {username:"carlo",password:"negro"},
+    {username:"marco",password:"prosciutto",admin:true},
+    {username:"carlo",password:"negro",admin:false},
   ]
   
   constructor(private router: Router){
@@ -24,6 +24,8 @@ export class LoginServiceService {
     
     this.gameList.forEach(element => {
       if(element.username===username && element.password===password){
+        //gestione admin
+        element.admin === true ? sessionStorage.setItem('privilege','admin') : sessionStorage.setItem('privilege','user')
         controllo=true;
       }
     });

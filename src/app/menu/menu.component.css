@@ -1,5 +1,14 @@
 .nav {
   background: white;
+  width: 25%;
+  height: 7vh;
+  display: flex;
+  justify-content: center;
+  margin-left: 650px;
+  margin-bottom: 100px;
+}
+.prova {
+  background: white;
   width: 18%;
   height: 7vh;
   display: flex;
