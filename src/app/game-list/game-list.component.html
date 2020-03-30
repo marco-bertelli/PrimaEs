@@ -1,4 +1,7 @@
 <app-menu></app-menu>
+<select>
+    <option *ngFor="let listItem of genereList" >{{listItem.descrizione}}</option>
+</select>
 <div class="list-type5">
     <ol>
         <li *ngFor="let listItem of gameList">
