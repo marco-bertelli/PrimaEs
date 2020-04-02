@@ -1,9 +1,11 @@
 <app-menu></app-menu>
 <select #genere>
+    <option [value]="0" >All</option>
     <option *ngFor="let listItem of genereList" [value]="listItem.id" >{{listItem.descrizione}}</option>
 </select>
 
 <button (click)="filtra(genere.value)">Filtra</button>
+
 
 
 <div class="list-type5">

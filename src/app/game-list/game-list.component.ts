@@ -26,7 +26,10 @@ export class GameListComponent implements OnInit {
   }
 
   filtra(valore:number){
-    
+    if(Number(valore)===0){
+      this.gameList=this.listaService.getlista();
+    }
+    else
     this.gameList=this.listaService.getGenere(Number(valore));
     
   }
