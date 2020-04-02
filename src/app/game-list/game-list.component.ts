@@ -28,6 +28,7 @@ export class GameListComponent implements OnInit {
   filtra(valore:number){
     
     this.gameList=this.listaService.getGenere(Number(valore));
+    
   }
 
   ngOnInit(): void {
