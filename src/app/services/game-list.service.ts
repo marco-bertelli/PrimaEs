@@ -18,5 +18,12 @@ export class GameListService {
       return item.Id === id;
     })
   }
+  
+  getGenere(genere:number){
+    return this.gameList.filter(item=>{
+      return item.Genere === genere ;
+    })
+  }
+
   constructor() { }
 }

@@ -1,7 +1,11 @@
 <app-menu></app-menu>
-<select>
-    <option *ngFor="let listItem of genereList" >{{listItem.descrizione}}</option>
+<select #genere>
+    <option *ngFor="let listItem of genereList" [value]="listItem.id" >{{listItem.descrizione}}</option>
 </select>
+
+<button (click)="filtra(genere.value)">Filtra</button>
+
+
 <div class="list-type5">
     <ol>
         <li *ngFor="let listItem of gameList">

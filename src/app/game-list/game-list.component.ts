@@ -25,6 +25,11 @@ export class GameListComponent implements OnInit {
     this.router.navigate(['/game-detail',id]);
   }
 
+  filtra(valore:number){
+    
+    this.gameList=this.listaService.getGenere(Number(valore));
+  }
+
   ngOnInit(): void {
 
   }
