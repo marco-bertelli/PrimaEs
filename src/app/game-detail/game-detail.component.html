@@ -4,6 +4,7 @@
         <li>Nome: {{game.Nome}}</li>
         <li>Descrizione: {{game.Descrizione}}</li>
         <li>Genere: {{game.Genere}}</li>
-        <li>Prezzo: {{game.Prezzo}}</li>
+        <li>Prezzo: {{game.Prezzo | currency:"EUR":"symbol"}}</li>
+        <li>Data: {{game.Annouscita | date}} </li>
     </ol>
 </div>
