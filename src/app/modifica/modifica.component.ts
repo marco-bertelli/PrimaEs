@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ListItem } from '../models/list-game.interface';
+import { GameListService } from '../services/game-list.service';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';​
 
 @Component({
   selector: 'app-modifica',
@@ -7,9 +11,57 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ModificaComponent implements OnInit {
 
-  constructor() { }
+  gameList:ListItem[];
+  gameform:FormGroup;
+  attivato:boolean;
+  gioco:ListItem;
+  
+  constructor(private listaService: GameListService,private fb: FormBuilder) { 
+    this.gameList=this.listaService.getlista();
+
+    this.gameform = this.fb.group({
+      id: '',
+      name: '',
+      power: '',
+      descrizione:'',
+      genere:'',
+      rating:'',
+      prezzo:'',
+      annoUscita:'',
+    });
+  }
 
   ngOnInit(): void {
+    this.attivato=false;
+  }
+
+  form(id:number){
+    
+    this.gioco=this.listaService.getSingolo(Number(id));
+    this.modifica(this.gioco);
+    this.attivato=true;
+    
+
+
+    
+  }
+  idpassato(){
+    if(this.attivato===true)return true;
+    else return false;
+
+  }
+  modifica(gioco:ListItem){
+    this.gameform = this.fb.group({
+      id: '',
+      name: gioco.Nome,
+      power: '',
+      descrizione:'',
+      genere:'',
+      rating:'',
+      prezzo:'',
+      annoUscita:'',
+    });
+
   }
 
 }

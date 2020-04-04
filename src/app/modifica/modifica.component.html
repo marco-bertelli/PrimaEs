@@ -1,1 +1,13 @@
-<p>modifica works!</p>
+<div>
+    <h1>INSERISCI L'ID DA MODIFICARE</h1>
+    <input type="text" #id >
+    <button (click)="form(id.value)">invia</button>
+
+    <form *ngIf="idpassato()" [formGroup]="gameform">
+        <div >
+          <label for="name">Name</label>
+          <input type="text"  id="name"  required formControlName="name">
+        </div>
+        <button type="submit">Submit</button>
+    </form> 
+</div>
