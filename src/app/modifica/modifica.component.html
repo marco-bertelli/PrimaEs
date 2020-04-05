@@ -1,6 +1,10 @@
 <div>
-    <h1>INSERISCI L'ID DA MODIFICARE</h1>
-    <input type="text" #id >
+    <h1>SCEGLI IL GIOCO DA MODIFICARE</h1>
+
+    <select #id>
+      <option *ngFor="let listItem of gameList" [value]="listItem.Id" >{{listItem.Nome}}</option>
+  </select>
+
     <button (click)="form(id.value)">invia</button>
 
     <form (ngSubmit)="onSubmit(gameform.value)" *ngIf="idpassato()" [formGroup]="gameform">
