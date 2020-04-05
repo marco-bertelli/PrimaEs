@@ -26,7 +26,25 @@ export class GameListService {
   }
   modifica(gioco){
     
-
+    this.gameList.forEach(element => {
+      if(element.Id===gioco.id){
+        //funzione per modificare
+        element.Nome=gioco.name;
+        element.Genere=gioco.genere;
+        element.Descrizione=gioco.descrizione;
+        element.Prezzo=gioco.prezzo;
+        element.Rating=gioco.rating;
+      //aggiorna i singoli valori passato un elemento
+      }
+    });
+  }
+  //funzione di debug da non considerare
+  stampalista(){
+    let temp:ListItem[];
+    temp=this.getlista();
+    temp.forEach(element => {
+      console.log(element);
+    });
   }
 
   constructor() { }

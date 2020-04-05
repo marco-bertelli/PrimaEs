@@ -55,7 +55,9 @@ export class ModificaComponent implements OnInit {
     });
   }
   onSubmit(form){
-    
+    this.listaService.modifica(form);
+    this.gameList=this.listaService.getlista();
+    this.attivato=false;
     
   }
 
