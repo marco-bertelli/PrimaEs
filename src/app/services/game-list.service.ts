@@ -24,6 +24,10 @@ export class GameListService {
       return item.Genere === genere ;
     })
   }
+  modifica(gioco){
+    
+
+  }
 
   constructor() { }
 }

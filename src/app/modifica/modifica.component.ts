@@ -22,7 +22,6 @@ export class ModificaComponent implements OnInit {
     this.gameform = this.fb.group({
       id: '',
       name: '',
-      power: '',
       descrizione:'',
       genere:'',
       rating:'',
@@ -36,32 +35,28 @@ export class ModificaComponent implements OnInit {
   }
 
   form(id:number){
-    
     this.gioco=this.listaService.getSingolo(Number(id));
     this.modifica(this.gioco);
     this.attivato=true;
-    
-
-
-    
   }
   idpassato(){
     if(this.attivato===true)return true;
     else return false;
-
   }
   modifica(gioco:ListItem){
     this.gameform = this.fb.group({
-      id: '',
+      id: gioco.Id,
       name: gioco.Nome,
-      power: '',
-      descrizione:'',
-      genere:'',
-      rating:'',
-      prezzo:'',
-      annoUscita:'',
+      descrizione: gioco.Descrizione,
+      genere: gioco.Genere,
+      rating: gioco.Rating,
+      prezzo: gioco.Prezzo,
+      annoUscita: gioco.Annouscita,
     });
-
+  }
+  onSubmit(form){
+    
+    
   }
 
 }
