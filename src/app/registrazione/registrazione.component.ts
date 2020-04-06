@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
+import { LoginServiceService } from '../services/login-service.service';
+
 
 @Component({
   selector: 'app-registrazione',
@@ -7,9 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistrazioneComponent implements OnInit {
 
-  constructor() { }
+  signform:FormGroup;
+
+  constructor(private datiUtenti:LoginServiceService ,private fb: FormBuilder) {
+
+    this.signform = this.fb.group({
+      username:'',
+      password:''
+    });
+
+   }
 
   ngOnInit(): void {
+  }
+
+  onSubmit(user){
+
   }
 
 }

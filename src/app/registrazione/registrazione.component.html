@@ -1,1 +1,12 @@
-<p>registrazione works!</p>
+<div>
+    <form [formGroup]="signform" (ngSubmit)="onSubmit(signform.value)">
+        <div>
+            <label for="user">User</label>
+            <input type="text"  id="user"  required formControlName="user">
+        </div>
+        <div >
+            <label for="password">User</label>
+            <input type="password"  id="password"  required formControlName="password">
+        </div>
+    </form>
+</div>

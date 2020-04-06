@@ -53,6 +53,17 @@ export class LoginServiceService {
       this.router.navigateByUrl("/home");
     }
   }
+  //registrazione
+  add(user){
+    //variabile temp
+    let temp:User;
+    temp.username=user.username;
+    temp.password=user.password;
+    temp.admin=false;
+    
+    this.gameList.push(temp);
+
+  }
 
  
 }
