@@ -29,20 +29,25 @@ export class ModificaComponent implements OnInit {
       annoUscita:'',
     });
   }
-
+  //inizializza falso 
   ngOnInit(): void {
     this.attivato=false;
   }
-
+  
+  //visualizzare la form riempita
   form(id:number){
     this.gioco=this.listaService.getSingolo(Number(id));
     this.modifica(this.gioco);
     this.attivato=true;
   }
+
+//controlli se l'utente ha scelto
   idpassato(){
     if(this.attivato===true)return true;
     else return false;
   }
+
+//riempie la form
   modifica(gioco:ListItem){
     this.gameform = this.fb.group({
       id: gioco.Id,
@@ -54,9 +59,14 @@ export class ModificaComponent implements OnInit {
       annoUscita: gioco.Annouscita,
     });
   }
+
+  //quando clicchi invia e aggiorna
   onSubmit(form){
     this.listaService.modifica(form);
     this.gameList=this.listaService.getlista();
+
+    window.alert("modifica effettuata");
+
     this.attivato=false;
     
   }
