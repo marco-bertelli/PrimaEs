@@ -25,7 +25,7 @@ export class RegistrazioneComponent implements OnInit {
   }
 
   onSubmit(user){
-
+    this.datiUtenti.add(user);
   }
 
 }
