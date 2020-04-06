@@ -27,6 +27,7 @@ export class RegistrazioneComponent implements OnInit {
 
   onSubmit(user){
     this.datiUtenti.add(user);
+    this.return();
   }
   return(){
     this.router.navigateByUrl("/login");
