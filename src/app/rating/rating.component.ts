@@ -27,6 +27,7 @@ export class RatingComponent implements OnInit, ControlValueAccessor {
   registerOnChange(fn: any): void {
     this.onChange = fn;
   }
+  
   registerOnTouched(fn: any): void {
     this.onTouch = fn;
   }
