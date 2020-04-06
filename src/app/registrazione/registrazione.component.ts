@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { LoginServiceService } from '../services/login-service.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -12,7 +13,7 @@ export class RegistrazioneComponent implements OnInit {
 
   signform:FormGroup;
 
-  constructor(private datiUtenti:LoginServiceService ,private fb: FormBuilder) {
+  constructor(private datiUtenti:LoginServiceService ,private fb: FormBuilder,private router: Router) {
 
     this.signform = this.fb.group({
       username:'',
@@ -26,6 +27,9 @@ export class RegistrazioneComponent implements OnInit {
 
   onSubmit(user){
     this.datiUtenti.add(user);
+  }
+  return(){
+    this.router.navigateByUrl("/login");
   }
 
 }

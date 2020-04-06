@@ -35,7 +35,7 @@ export class ModificaComponent implements OnInit {
   }
   
   //visualizzare la form riempita
-  form(id:number){
+  showForm(id:number){
     this.gioco=this.listaService.getSingolo(Number(id));
     this.modifica(this.gioco);
     this.attivato=true;
