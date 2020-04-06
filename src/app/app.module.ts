@@ -13,6 +13,7 @@ import { LogoutComponent } from './logout/logout.component';
 import { ModificaComponent } from './modifica/modifica.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegistrazioneComponent } from './registrazione/registrazione.component';
+import { RatingComponent } from './rating/rating.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { RegistrazioneComponent } from './registrazione/registrazione.component'
     LoginComponent,
     LogoutComponent,
     ModificaComponent,
-    RegistrazioneComponent
+    RegistrazioneComponent,
+    RatingComponent
   ],
   imports: [
     BrowserModule,
