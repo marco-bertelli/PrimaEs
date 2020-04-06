@@ -28,5 +28,8 @@ export class LoginComponent implements OnInit {
 
     this.listaUtenti.eseguiLoginS();
   }
+  registrati(){
+    this.router.navigateByUrl("/registrazione");
+  }
 
 }
