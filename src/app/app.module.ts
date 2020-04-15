@@ -14,6 +14,7 @@ import { ModificaComponent } from './modifica/modifica.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegistrazioneComponent } from './registrazione/registrazione.component';
 import { RatingComponent } from './rating/rating.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { RatingComponent } from './rating/rating.component';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    RoutingGame
+    RoutingGame,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
