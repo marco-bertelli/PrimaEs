@@ -28,21 +28,32 @@ export class GameListComponent implements OnInit {
 
   filtra(valore:number){
     if(Number(valore)===0){
-      this.gameList=this.listaService.getlista();
+      this.retrieveGames();
     }
     else
-    this.gameList=this.listaService.getGenere(Number(valore));
+    this.retrieveFilter(Number(valore));
     
   }
 
-  ngOnInit(): void {
-
+  retrieveGames(){
     this.myHttpService.getGames().subscribe(reponse => {
       this.gameList = reponse;
     }, err => {
       console.log('error');
     });
+  }
 
+  retrieveFilter(genere){
+    this.myHttpService.getFiltra(genere).subscribe(reponse => {
+      this.gameList = reponse.body;
+    }, err => {
+      console.log('error');
+    });
+  }
+
+  ngOnInit(): void {
+    this.retrieveGames();
+    
   }
 
   
